@@ -64,7 +64,7 @@ Here is an example of event data for Track request
 }
 ```
 
-#### Event Data Example Example
+#### Event Data Example
 
 **Send all Analytics Hits Request**
 
