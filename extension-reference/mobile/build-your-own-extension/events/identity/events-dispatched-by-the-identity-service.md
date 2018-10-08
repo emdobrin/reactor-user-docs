@@ -16,7 +16,7 @@ This event is a response from the Identity extension to the public API callbacks
 
 | **Event Type**               | **Event Source**                       | **Paired** | **Paired Event**                                             |
 | :--------------------------- | :------------------------------------- | :--------- | :----------------------------------------------------------- |
-| com.adobe.eventType.identity | com.adobe.eventSource.responseIdentity | Yes        | [Identity Request Identity Event](./events-handles-by-the-identity-service.md#identity-request-identity) |
+| com.adobe.eventType.identity | com.adobe.eventSource.responseIdentity | Yes        | [Identity Request Identity Event](./events-handled-by-the-identity-service.md#identity-request-identity) |
 
 ### Data Payload Definition
 
