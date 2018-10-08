@@ -4,9 +4,7 @@
 
 ## Identity Response Identity
 
-This event is a response from the Identity extension to the public API callbacks.
-
-This event will be generated in response to an Identity Request Identity event when:
+This event is a response from the Identity extension to the public API callbacks and it will be generated in response to an Identity Request Identity event when:
 
 - retrieving the Experience Cloud ID (MID) 
 - retrieving the custom visitor identifiers
@@ -18,7 +16,7 @@ This event will be generated in response to an Identity Request Identity event w
 
 | **Event Type**               | **Event Source**                       | **Paired** | **Paired Event**                                             |
 | :--------------------------- | :------------------------------------- | :--------- | :----------------------------------------------------------- |
-| com.adobe.eventType.identity | com.adobe.eventSource.responseIdentity | Yes        | [Identity Request Identity Event](./events-handles-by-the-identity-service.md/Identity-Request-Identity) |
+| com.adobe.eventType.identity | com.adobe.eventSource.responseIdentity | Yes        | [Identity Request Identity Event](./events-handles-by-the-identity-service.md#identity-request-identity) |
 
 ### Data Payload Definition
 
@@ -63,7 +61,7 @@ Here are the key-value pairs in this event:
 
 ### Event Data Example
 
-**The result for the appentToUrl request**
+**The result for the appendToUrl request**
 
 ```json
 {
@@ -77,7 +75,7 @@ Here are the key-value pairs in this event:
 
 The Identity Extension dispatches a new Configuration Content Request event when a privacy change is detected. This event will be handled by the Core extension and the new privacy status will be broadcasted to other extensions.
 
-For more details about this event see [SDK Core - Configuration Content Request](../sdk-core/events-handled-by-sdk-core.md/Configuration-Request-Content)
+For more details about this event see [SDK Core - Configuration Content Request](../sdk-core/events-handled-by-sdk-core.md#configuration-request-content)
 
 
 
@@ -85,7 +83,7 @@ For more details about this event see [SDK Core - Configuration Content Request]
 
 The Identity Extension dispatches a new Analytics Content Request event when a push status preference change is detected. This event will be handled by the Analytics extension and a new internal hit will be sent to the Adobe Analytics Server.
 
-For more details about this event see [Analytics Content Request](../adobe-analytics/events-handled-by-adobe-analytics.md/Analytics-Content-Request)
+For more details about this event see [Analytics Content Request](../adobe-analytics/events-handled-by-adobe-analytics.md#analytics-content-request)
 
 
 
