@@ -30,7 +30,7 @@ Here are the key-value pairs in this event:
 | blob                  | String                    | Yes          | The blob value retrieved from the Experience Cloud ID Service |
 | locationhint          | String                    | Yes          | The location hint value retrieved from the Experience Cloud ID Service |
 | visitoridslist        | List<Map<String, Object>> | Yes          | A list of visitor identifiers that were synced before using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor id will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state` |
-| lastsync              | Long                      | Yes          | Timestamp in seconds of the last sync call sent to the identity service, by default it is 0 |
+| lastsync              | Long                      | Yes          | Timestamp in seconds of the last sync call sent to the Identity service, by default it is 0 |
 | updatedurl            | String                    | Yes          | The update URL when `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) public API is called |
 
 ### Event Data Example
