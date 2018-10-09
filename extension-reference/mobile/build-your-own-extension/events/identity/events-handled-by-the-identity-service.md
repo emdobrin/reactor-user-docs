@@ -31,8 +31,6 @@ Here are the key-value pairs in this event:
 | baseurl             | String              | Yes          | The base URL passed as parameter to the `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) API |
 | visitoridentifiers  | Map<String, String> | Yes          | The visitor identifiers that need to be synced with the Experience Cloud ID Service. The keys of the map are the identifier types and the values are the associated identifiers |
 | authenticationstate | Integer             | Yes          | The VisitorID Authentication State represent (Unknown - 0, Authenticated - 1, Logged Out - 2) |
-| forcesync           | Boolean             | Yes          | Boolean indicating if this sync call should be sent to the Experience Cloud ID Service regardless of any changes to the identifiers |
-| issyncevent         | Boolean             | Yes          | Boolean indicating if this is an Identity sync event         |
 
 ### Event Data Example
 
@@ -54,9 +52,7 @@ Here are the key-value pairs in this event:
         "idtype1" : "id1",
         "idtype2" : "id2"
     },
-    "authenticationstate" : 1,
-    "forcesync" : false,
-    "issyncevent" : true
+    "authenticationstate" : 1
 }
 ```
 
