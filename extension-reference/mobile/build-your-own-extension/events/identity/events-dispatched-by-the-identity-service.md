@@ -1,6 +1,6 @@
 
 
-# Events Dispatched by the Identity Service
+# Events Dispatched by the Identity Extension
 
 ## Identity Response Identity
 
@@ -10,7 +10,6 @@ This event is a response from the Identity extension to the public API callbacks
 - retrieving the custom visitor identifiers
 - syncronizing a visitor identifier or a list of identifiers with the Adobe Experience Cloud ID Service is complete
 - the result for the append to URL request is ready
-- privacy status changes to OPT_OUT and all the identifiers are cleared
 
 ### Event Details
 
@@ -25,12 +24,12 @@ Here are the key-value pairs in this event:
 | **Key**               | **Value Type**            | **Optional** | **Description**                                              |
 | :-------------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
 | mid                   | String                    | Yes          | The value of the Experience Cloud Identifier (MID)           |
-| advertisingidentifier | String                    | Yes          | The value of the Advertising identifier if it was set before |
-| pushidentifier        | String                    | Yes          | The value of the Push Identifier if one was set before       |
+| advertisingidentifier | String                    | Yes          | The value of the Advertising Identifier if it was previously set |
+| pushidentifier        | String                    | Yes          | The value of the Push Identifier if one was previously set   |
 | blob                  | String                    | Yes          | The blob value retrieved from the Experience Cloud ID Service |
 | locationhint          | String                    | Yes          | The location hint value retrieved from the Experience Cloud ID Service |
-| visitoridslist        | List<Map<String, Object>> | Yes          | A list of visitor identifiers that were synced before using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor id will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state` |
-| lastsync              | Long                      | Yes          | Timestamp in seconds of the last sync call sent to the Identity service, by default it is 0 |
+| visitoridslist        | List<Map<String, Object>> | Yes          | A list of visitor identifiers that were previously synced using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor id will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state` |
+| lastsync              | Long                      | Yes          | Timestamp in seconds of the last sync call sent to the Experience Cloud ID Service, by default it is 0 |
 | updatedurl            | String                    | Yes          | The update URL when `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) public API is called |
 
 ### Event Data Example
@@ -73,7 +72,7 @@ Here are the key-value pairs in this event:
 
 ## Configuration Content Request 
 
-The Identity Extension dispatches a new Configuration Content Request event when a privacy change is detected. This event will be handled by the Core extension and the new privacy status will be broadcasted to other extensions.
+The Identity Extension dispatches a new Configuration Content Request event when a privacy change is detected in the response received from the Experience Cloud ID Service. This event will be handled by the Core extension and the new privacy status will be broadcasted to other extensions.
 
 For more details about this event see [SDK Core - Configuration Content Request](../sdk-core/events-handled-by-sdk-core.md#configuration-request-content)
 
@@ -81,7 +80,7 @@ For more details about this event see [SDK Core - Configuration Content Request]
 
 ## Analytics Content Request
 
-The Identity Extension dispatches a new Analytics Content Request event when a push status preference change is detected. This event will be handled by the Analytics extension and a new internal hit will be sent to the Adobe Analytics Server.
+The Identity Extension dispatches a new Analytics Content Request event when a push status preference change is detected, when the push identifier is initially set or when it is cleared from the SDK. This event will be handled by the Analytics extension and a new internal hit will be sent to the Adobe Analytics Server.
 
 For more details about this event see [Analytics Content Request](../adobe-analytics/events-handled-by-adobe-analytics.md#analytics-content-request)
 
