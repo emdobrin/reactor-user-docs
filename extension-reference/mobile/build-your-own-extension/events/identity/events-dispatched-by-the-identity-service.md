@@ -25,7 +25,7 @@ Here are the key-value pairs in this event:
 | :-------------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
 | mid                   | String                    | Yes          | The value of the Experience Cloud Identifier (MID)           |
 | advertisingidentifier | String                    | Yes          | The value of the Advertising Identifier if it was previously set |
-| pushidentifier        | String                    | Yes          | The value of the Push Identifier if one was previously set   |
+| pushidentifier        | String                    | Yes          | The SHA1 hashed Push Identifier if one was previously set    |
 | blob                  | String                    | Yes          | The blob value retrieved from the Experience Cloud ID Service |
 | locationhint          | String                    | Yes          | The location hint value retrieved from the Experience Cloud ID Service |
 | visitoridslist        | List<Map<String, Object>> | Yes          | A list of visitor identifiers that were previously synced using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor id will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state` |

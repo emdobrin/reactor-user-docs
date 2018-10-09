@@ -1,12 +1,12 @@
 # Shared State
 
-**MODULE\_NAME**: `com.adobe.module.identity`
+**EXTENSION\_NAME**: `com.adobe.module.identity`
 
 The Identity extension shared state is created in the following situations:
 
-* When the module first loads and is initialized
-* When handling a sync request, regardless if the actual sync occurs. Occurs when setting the push ID, advertising ID, or customer's custom identifiers.
-* When a successful sync request occurs, the shared state is updated after receiving a response from the Visitor ID service.
+* When the extension first loads and is initialized
+* When handling a sync request, regardless if the actual sync occurs. Occurs when setting the Push Identifier, Advertising Identifier, or customer's custom identifiers
+* When the global privacy status changes to `optedout`, a shared state is set after the identifiers are cleared
 
 | Key | Type | Description |
 | :--- | :--- | :--- |

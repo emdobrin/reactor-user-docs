@@ -31,7 +31,7 @@ Here are the key-value pairs in this event:
 | baseurl             | String              | Yes          | The base URL passed as parameter to the `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) API |
 | visitoridentifiers  | Map<String, String> | Yes          | The visitor identifiers that need to be synced with the Experience Cloud ID Service. The keys of the map are the identifier types and the values are the associated identifiers |
 | authenticationstate | Integer             | Yes          | The VisitorID Authentication State represent (Unknown - 0, Authenticated - 1, Logged Out - 2) |
-| forcesync           | Boolean             | Yes          | Boolean indicating if this sync call should be sent to the Experience Cloud ID Service |
+| forcesync           | Boolean             | Yes          | Boolean indicating if this sync call should be sent to the Experience Cloud ID Service regardless of any changes to the identifiers |
 | issyncevent         | Boolean             | Yes          | Boolean indicating if this is an Identity sync event         |
 
 ### Event Data Example
@@ -93,43 +93,26 @@ Here are the key-value pairs in this event:
 
 | **Key**               | **Value Type** | **Optional** | **Description**                                              |
 | :-------------------- | :------------- | :----------- | :----------------------------------------------------------- |
-| advertisingidentifier | String         | Yes          | The base URL passed as parameter to the `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) API |
+| advertisingidentifier | String         | Yes          | The value of the Advertising Identifier for the mobile device that needs to be set in the SDK. This key will be populated when `setAdvertisingIdentifier` API is called. |
+| pushidentifier        | String         | Yes          | The value of the Push Identifier that needs to be set. This key will be populated when `setPushIdentifier` API is called |
 
 ### Event Data Example
 
-**Append to URL request**
+**Set Advertising Identifier request**
 
 ```json
 {
-    "baseurl": "https://example.com/path?query=parameter1&other=parameter2"
+    "advertisingidentifier": "advertisingIdExample"
 }
 ```
 
 ### Event Data Example
 
-**Sync identifiers request**
+**Set Push Identifier request**
 
 ```json
 {
-    "visitoridentifiers": {
-        "idtype1" : "id1",
-        "idtype2" : "id2"
-    },
-    "authenticationstate" : 1,
-    "forcesync" : false,
-    "issyncevent" : true
+    "pushidentifier": "pushIdExample"
 }
 ```
-
-### Event Data Example
-
-**Experience Cloud ID request**
-
-There are no key-value pairs for this event.
-
-### Event Data Example
-
-**Identifiers request**
-
-There are no key-value pairs for this event.
 
